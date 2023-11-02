@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <h1>Lista de Alunos</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Nota 1º Semestre</th>
+            <th>Nota 2º Semestre</th>
+            <th>Professor</th>
+            <th>Número da Sala</th>
+            <th>Ações</th>
+        </tr>
+        {% for aluno in alunos %}
+        <tr>
+            <td>{{ aluno.id }}</td>
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.idade }}</td>
+            <td>{{ aluno.nota_primeiro_semestre }}</td>
+            <td>{{ aluno.nota_segundo_semestre }}</td>
+            <td>{{ aluno.nome_professor }}</td>
+            <td>{{ aluno.numero_sala }}</td>
+            <td>
+                <a href="{{ url_for('editar_aluno', id=aluno.id) }}">Editar</a>
+                <a href="{{ url_for('remover_aluno', id=aluno.id) }}">Remover</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('adicionar_aluno') }}">Adicionar Aluno</a>
+</body>
+</html>

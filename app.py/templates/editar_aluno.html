@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Aluno</title>
+</head>
+<body>
+    <h1>Editar Aluno</h1>
+    <form method="post" action="{{ url_for('editar_aluno', id=aluno.id) }}">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="{{ aluno.nome }}" required><br>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" value="{{ aluno.idade }}" required><br>
+        <label for="nota_primeiro_semestre">Nota do Primeiro Semestre:</label>
+        <input type="number" name="nota_primeiro_semestre" value="{{ aluno.nota_primeiro_semestre }}" step="0.01" required><br>
+        <label for="nota_segundo_semestre">Nota do Segundo Semestre:</label>
+        <input type="number" name="nota_segundo_semestre" value="{{ aluno.nota_segundo_semestre }}" step="0.01" required><br>
+        <label for="nome_professor">Nome do Professor:</label>
+        <input type="text" name="nome_professor" value="{{ aluno.nome_professor }}" required><br>
+        <label for="numero_sala">Número da Sala:</label>
+        <input type="number" name="numero_sala" value="{{ aluno.numero_sala }}" required><br>
+        <input type="submit" value="Salvar Alterações">
+    </form>
+</body>
+</html>
